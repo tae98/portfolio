@@ -1,8 +1,4 @@
-import {
-  algorithms,
-  devnotes,
-  oscs,
-} from "../assets";
+import { algorithms, devnotes, oscs, trendchat } from "../assets";
 
 export const navLinks = [
   {
@@ -56,12 +52,14 @@ const experiences = [
   },
   {
     title: "Computer Science",
-    company_name: "ODU",
-    date: "2015 - 2018",
+    company_name: "King's College London",
+    date: "2017 - 2023",
     details: [
-      "Built a <span style='color: white;'>computer science foundation</span> learning theory, computer architecture, and software engineering.",
-      "Worked and interned at <span style='color: white;'>NASA and Norfolk Southern Railway</span> to gain practical experience in the field of data analysis.",
-      "Acted as a member of the <span style='color: white;'>Association for Computing Machinery</span> (ACM).",
+      "<span style='color: white;'>컴퓨터공학</span> 전공자로서 자료구조, 운영체제, 인터넷 시스템 등 핵심 과목 이수",
+      "<span style='color: white;'>PyTorch</span>와 <span style='color: white;'>TensorFlow</span> 기반 <span style='color: white;'>한영 양방향 기계번역기</span> 개발 및 논문 제출",
+      "<span style='color: white;'>TurtleBot</span>을 활용한 <span style='color: white;'>A* 탐색 기반 자율주행</span> 프로젝트 수행 (ROS, Python)",
+      "<span style='color: white;'>Pacman AI</span> 개발: 베이즈 분류와 MDP를 적용한 자동 플레이 에이전트 구현",
+      "<span style='color: white;'>학점: Upper Second Class (3.6/4.0)</span>",
     ],
   },
 ];
@@ -80,12 +78,20 @@ const portfolio = [
     image: devnotes,
   },
   {
-    name: "Visually Understanding Algorithms",
+    name: "TrendChat",
     description:
-      "A showcase of animated algorithms coded using TypeScript, with the video garnering over 400,000 views.",
-    image: algorithms,
+      "MSA 기반 트렌드 채팅 플랫폼. Google Trends RSS를 Kafka로 처리하고, WebFlux로 실시간 채팅 및 SSE 구현. Redis로 JWT + Refresh Token 인증 방식 적용.",
+    image: trendchat,
+    tags: [
+      "Spring WebFlux",
+      "Kafka",
+      "Redis",
+      "JWT",
+      "MySQL",
+      "Refresh Token",
+      "RabbitMQ",
+    ],
   },
 ];
 
 export { experiences, portfolio };
-
