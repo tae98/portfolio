@@ -1,8 +1,15 @@
+// src/components/Contact.jsx
 import emailjs from "@emailjs/browser";
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
+
+// ✅ EmailJS v3: 앱 로드 시 1회 초기화
+emailjs.init({
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+});
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -22,8 +29,7 @@ const Contact = () => {
       await emailjs.sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        formRef.current
       );
       alert("메시지 전송 완료! 곧 연락드릴게요.");
       formRef.current.reset();
@@ -52,7 +58,7 @@ const Contact = () => {
       >
         <h3 className={styles.sectionText}>Contact</h3>
 
-        {/* ✅ action/method 제거, ref + onSubmit 추가 */}
+        {/* ✅ action/method 제거, ref + onSubmit 사용 */}
         <form
           ref={formRef}
           onSubmit={handleSubmit}
@@ -60,7 +66,7 @@ const Contact = () => {
         >
           <span className="text-white font-medium mt-3">Full Name</span>
           <input
-            name="name"
+            name="name" // 템플릿 변수와 동일해야 함: {{name}}
             type="text"
             placeholder="Enter your full name"
             className="bg-tertiary p-4 text-white border font-medium"
@@ -69,7 +75,7 @@ const Contact = () => {
 
           <span className="text-white font-medium mt-3">Email Address</span>
           <input
-            name="email"
+            name="email" // {{email}}
             type="email"
             placeholder="Enter your email address"
             className="bg-tertiary p-4 text-white border font-medium"
@@ -78,7 +84,7 @@ const Contact = () => {
 
           <span className="text-white font-medium mt-3">Message</span>
           <textarea
-            name="message"
+            name="message" // {{message}}
             rows="10"
             placeholder="Enter your message"
             className="bg-tertiary p-4 text-white border font-medium"
