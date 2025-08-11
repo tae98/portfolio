@@ -1,4 +1,4 @@
-import { algorithms, devnotes, oscs, trendchat } from "../assets";
+import { fitnus, trendchat, leetcode } from "../assets";
 
 export const navLinks = [
   {
@@ -21,33 +21,27 @@ export const navLinks = [
 
 const experiences = [
   {
-    title: "YouTube Content Creator",
-    company_name: "Self Employed",
-    date: "2016 - Present",
+    title: "Backend Developer",
+    company_name: "TrendChat Project Team",
+    date: "2025.06 - 2025.08",
     details: [
-      "Built a subscriber base of over <span style='color: white;'>500,000 subscribers</span> by creating video content to help programmers.",
-      "Crafted visually appealling programming videos that have garnered over <span style='color: white;'>30,000,000 views</span>.",
-      "Produced high-quality educational and entertaining videos for clients including <span style='color: white;'>Intel, JetBrains, and MicroCenter</span>.",
+      "MSA 기반 실시간 채팅 플랫폼 백엔드 개발",
+      "Spring WebFlux + SSE로 실시간 메시지 전송 구현",
+      "RabbitMQ·Redis Pub/Sub으로 NEW 메시지 알림 시스템 구축",
+      "JWT + Refresh Token 기반 인증 및 역할별 접근 제어 적용",
+      "DB 부하 70% 절감, 동시 접속자 1,000+명 안정 처리",
     ],
   },
   {
-    title: "Software Developer",
-    company_name: "Indie",
-    date: "2019 - 2023",
+    title: "Backend Developer",
+    company_name: "FitNus",
+    date: "2024.09 - 2024.11",
     details: [
-      "Developed and delivered custom interdisciplinary coding portfolio for clients including <span style='color: white;'>Nvidia, Hostinger, and Amazon</span>.",
-      "<span style='color: white;'>Designed and developed innovative</span> AI applications and interactive websites.",
-      "<span style='color: white;'>Managed full project lifecycle</span> from concept to deployment in successful and timely project completions.",
-    ],
-  },
-  {
-    title: "Software Engineer",
-    company_name: "Prime 3",
-    date: "2018 - 2019",
-    details: [
-      "Built custom enterprise applications for a <span style='color: white;'>Fortune 500 company</span> as a full-stack software engineer.",
-      "Developed and maintained <span style='color: white;'>scalable backend services</span>, ensuring high availability for critical business applications.",
-      "<span style='color: white;'>Collaborated with a team</span> to design and implement front-end interfaces.",
+      "구독·쿠폰 기반 운동 세션 결제 백엔드 개발",
+      "KakaoPay 결제 연동, 결제 성공 시 쿠폰 발급·만료·잔여수량 관리",
+      "Optimistic Lock 기반 동시성 제어로 데이터 경합 문제 방지",
+      "결제 실패 시 트랜잭션 보상 처리로 데이터 일관성 보장",
+      "QueryDSL 기반 복합 조회 API 구현",
     ],
   },
   {
@@ -55,42 +49,54 @@ const experiences = [
     company_name: "King's College London",
     date: "2017 - 2023",
     details: [
-      "<span style='color: white;'>컴퓨터공학</span> 전공자로서 자료구조, 운영체제, 인터넷 시스템 등 핵심 과목 이수",
-      "<span style='color: white;'>PyTorch</span>와 <span style='color: white;'>TensorFlow</span> 기반 <span style='color: white;'>한영 양방향 기계번역기</span> 개발 및 논문 제출",
-      "<span style='color: white;'>TurtleBot</span>을 활용한 <span style='color: white;'>A* 탐색 기반 자율주행</span> 프로젝트 수행 (ROS, Python)",
-      "<span style='color: white;'>Pacman AI</span> 개발: 베이즈 분류와 MDP를 적용한 자동 플레이 에이전트 구현",
-      "<span style='color: white;'>학점: Upper Second Class (3.6/4.0)</span>",
+      "자료구조, 운영체제, 인터넷 시스템 등 핵심 CS 과목 이수",
+      "PyTorch·TensorFlow 기반 한영 양방향 기계번역기 개발 및 논문 제출",
+      "TurtleBot을 활용한 A* 탐색 기반 자율주행 프로젝트 (ROS, Python)",
+      "Pacman AI: 베이즈 분류·MDP 기반 자동 플레이 에이전트 구현",
+      "학점: Upper Second Class (3.6/4.0)",
     ],
   },
 ];
 
 const portfolio = [
   {
-    name: "Open Source Computer Science Repo",
-    description:
-      "A GitHub repo with over 17,000 stars containing a curated list of free online courses from reputable universities that satisfy undergraduate computer science requirements.",
-    image: oscs,
-  },
-  {
-    name: "Dev Notes",
-    description:
-      "A newsletter with over 6,000 readers made for software developers to keep up with this rapidly evolving industry, with a sister platform in progress.",
-    image: devnotes,
-  },
-  {
     name: "TrendChat",
     description:
-      "MSA 기반 트렌드 채팅 플랫폼. Google Trends RSS를 Kafka로 처리하고, WebFlux로 실시간 채팅 및 SSE 구현. Redis로 JWT + Refresh Token 인증 방식 적용.",
+      "MSA 기반 실시간 트렌드 채팅 플랫폼. Google Trends RSS를 Kafka로 처리해 주제별 채팅방을 자동 생성하고, WebFlux + SSE로 실시간 메시지·알림 전송. RabbitMQ·Redis Pub/Sub으로 고속 알림, JWT + Refresh Token 인증으로 안전한 접근 제어. 이벤트 드리븐 구조로 DB 부하 70% 절감, 동시 접속자 1,000+명 안정 처리.",
     image: trendchat,
     tags: [
       "Spring WebFlux",
-      "Kafka",
+      "RabbitMQ",
       "Redis",
       "JWT",
       "MySQL",
       "Refresh Token",
-      "RabbitMQ",
     ],
+    github: "https://github.com/Cho-Gall-Dr-Mundo",
+  },
+  {
+    name: "FitNus",
+    description:
+      "구독·쿠폰 기반 운동 세션 결제 백엔드. KakaoPay 결제 연동 및 결제 성공 시 쿠폰 자동 발급, 만료·잔여수량·사용이력 관리. Optimistic Lock 기반 동시성 제어로 이중 사용·경합 문제 0건 달성. 트랜잭션 보상 처리로 결제 실패 시 데이터 일관성 보장, 관리자 API로 발급·조회 기능 제공.",
+    image: fitnus,
+    tags: [
+      "Spring Boot",
+      "JPA",
+      "MySQL",
+      "KakaoPay",
+      "Optimistic Lock",
+      "QueryDSL",
+      "Redis",
+    ],
+    github: "https://github.com/FitNus/FitNus",
+  },
+  {
+    name: "Algorithm Practice",
+    description:
+      "LeetCode 기반 알고리즘 문제 풀이 저장소. 이진 탐색, 그리디, DP 등 주제별로 풀이 및 주석 정리. 각 문제는 시간 복잡도, 공간 복잡도 분석 포함.",
+    image: leetcode,
+    tags: ["Java", "Python", "Data Structures", "Algorithms", "LeetCode"],
+    github: "https://github.com/tae98/LeetCodeAlgorithmPractice",
   },
 ];
 
