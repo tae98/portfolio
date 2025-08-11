@@ -23,7 +23,6 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formRef.current) return;
-
     try {
       setLoading(true);
       await emailjs.sendForm(
